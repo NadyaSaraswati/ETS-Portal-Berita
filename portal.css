@@ -1,0 +1,271 @@
+:root{
+    color: black;
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: none;
+    transition: 0.5s linear;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    margin: 10PX;
+}
+
+.logo-wrapper {
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+}
+
+/*search */
+/* CSS untuk menempatkan simbol pencarian dan input sejajar */
+.input-group {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    display: flex;
+    align-items: center; /* Mengatur elemen berdampingan secara vertikal */
+}
+
+/* Sesuaikan tampilan input sesuai kebutuhan Anda */
+.input-group input {
+    /* Atur tampilan input sesuai kebutuhan */
+    border: none;
+    border-radius: 0;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+/* Sesuaikan tampilan simbol pencarian sesuai kebutuhan Anda */
+.input-group .btn {
+    /* Atur tampilan tombol pencarian sesuai kebutuhan */
+    background-color: red; /* Warna latar belakang */
+    border: none;
+    border-radius: 0;
+    padding: 5px 10px;
+    color: white; /* Warna teks */
+}
+
+/*menu berita*/
+.menu {
+    background: red;
+    border: 2px solid red; /* Menambahkan garis merah sekitar menu */
+    padding: 15px;
+}
+
+.menu-items {
+    list-style: none;
+    margin: 0;
+    padding: 10;
+    display: flex; /* Menggunakan display: flex; untuk menyusun item horizontal */
+    justify-content: space-between; /* Membuat spasi di antara item */
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu-items a:hover {
+    color: white;
+}
+
+/* Gaya tautan dropdown */
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background: red;
+    display: none;
+    z-index: 1; /* Mengatur urutan tampilan */
+}
+
+
+
+.menu-items li:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    display: block;
+    padding: 10px 15px;
+}
+
+.dropdown-menu a {
+    color: #333;
+    text-decoration: none;
+    padding: 20px 15px;
+}
+
+.dropdown-menu a:hover {
+    color: #fff;
+}
+
+/* Gaya slider item */
+.slider-item {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    background-size: cover;
+}
+
+.slider-item .overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.slider-item .badge {
+    background-color: #17a2b8;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+.slider-item a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Gaya news item */
+.news-item {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    background-size: cover;
+}
+
+.news-item .overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.news-item .badge {
+    background-color: #17a2b8;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+.news-item a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+}
+
+/*slider*/
+.container {
+    position: relative;
+}
+
+.container .slide-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 9%;
+    padding-bottom: 70px;
+}
+
+.container .slide-container .slide {
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container .slide-container .slide.active {
+    display: flex;
+}
+
+.container .slide-container .slide .image {
+    flex: 1 1 500px;
+    display: flex; /* Tambahkan display flex */
+}
+
+.container .slide-container .slide .image .img {
+    width: 100%;
+    height: 100%; /* Atur tinggi gambar */
+    object-fit: cover; /* Atur cara gambar beradaptasi */
+}
+
+
+.container .slide-container .slide .content {
+    order: 1;
+}
+
+.container .slide-container .slide .content h3 {
+    font-size: 35px;
+    color: black;
+}
+
+.container .slide-container .slide .content p {
+    font-size: 16px;
+    color: black;
+    padding: 10px 0;
+}
+
+.container .slide-container .slide .content .btn {
+    margin-top: 10px;
+    display: inline-block;
+    background-color: red;
+    color: black;
+    font-size: 17px;
+    padding: 9px 40px;
+}
+
+.container .slide-container .slide .content .btn:hover {
+    color: white;
+}
+
+.container #prev, .container #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background: red;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.container #prev:hover, .container #next:hover {
+    color: white;
+}
+
+.container #prev {
+    position: absolute;
+    left: 20px;
+}
+
+.container #next {
+    position: absolute;
+    right: 20px;
+}

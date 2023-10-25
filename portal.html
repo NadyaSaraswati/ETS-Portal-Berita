@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portal.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- Top bar -->
+    <div class="container">
+        <div class="logo-wrapper">
+            <h1>
+                <a href="portal.html">Berita Update</a>
+            </h1>
+        </div>
+    </div>
+    <!-- Top bar end -->
+
+    <!-- Navigasi start -->
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Cari">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+        </div>
+    </div>      
+    <div class="container menu">
+        <ul class="menu-items">
+            <li><a href="portal.html">Home</a></li>
+            <li><a href="#">Berita</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Politik</a></li>
+                    <li><a href="#">Infotainment</a></li>
+                    <li><a href="#">Ekonomi</a></li>
+                    <li><a href="#">Kesehatan</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Lowongan Pekerjaan</a></li>
+            <li><a href="event.html">Event</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>  
+    </div>
+    <!-- Navigasi end -->
+
+    <!-- Main News Slider Start -->
+    <div class="container">
+        <div class="slide-container">
+            <div class="slide active">
+                <!--News 1-->
+                <div class="image">
+                    <img src="https://static.republika.co.id/uploads/images/inpicture_slide/008661100-1697381175-830-556.jpg" alt="loading..">
+                </div>
+                <div class="content">
+                    <h3>Pengamat Sebut Prabowo Pilih Gibran Sebagai Keputusan Blunder</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                    <a href="https://news.republika.co.id/berita/s2ylrl330/pengamat-sebut-prabowo-pilih-gibran-sebagai-keputusan-blunder" class="btn">read more</a>
+                </div>
+                
+            </div>
+            <!--News 2-->
+            <div class="slide">
+                <div class="image">
+                    <img src="https://image.jpnn.com/resize/600x320-80/arsip/normal/2023/10/23/aktris-syifa-hadju-ikut-turun-ke-jalan-dalam-aksi-damai-memb-kbls.jpg" alt="loading..">
+                </div>
+                <div class="content">
+                    <h3>Syifa Hadju Aktif Bela Palestina, Respons Rizky Nazar Bisa Bikin Hati Berbunga-bunga</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                    <a href="https://m.jpnn.com/news/syifa-hadju-aktif-bela-palestina-respons-rizky-nazar-bisa-bikin-hati-berbunga-bunga" class="btn">read more</a>
+                </div>
+            </div>
+            <!--News 3-->
+            <div class="slide">
+                <div class="image">
+                    <img src="https://asset.kompas.com/crops/jGPHILvu0MYFeZPIaoIm3qpnYyU=/184x0:974x527/750x500/data/photo/2023/06/11/64858c7301e2d.jpg" alt="loading..">
+                </div>
+                <div class="content">
+                    <h3>Apakah AC Berbahaya bagi Paru-paru? Berikut Penjelasannya…</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                    <a href="https://health.kompas.com/read/23J22120000568/apakah-ac-berbahaya-bagi-paru-paru-berikut-penjelasannya" class="btn">read more</a>
+                </div>
+            </div>
+        </div>
+        <div id="prev" class="prev-button"> < </div>
+        <div id="next" class="next-button"> > </div>
+    </div>
+
+    <script>
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+        const slides = document.querySelectorAll(".slide");
+        let currentIndex = 0;
+    
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add("active");
+                } else {
+                    slide.classList.remove("active");
+                }
+            });
+        }
+    
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        });
+    
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        });
+    
+        // Tampilkan slide pertama saat halaman dimuat
+        showSlide(currentIndex);
+    </script>
+    
+</body>
+
+</html>
